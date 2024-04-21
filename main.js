@@ -7,10 +7,10 @@ const checkAuth = require("./public/middlewares/CheckAuth.js");
 const convertToHash = require("./method/ConvertToHash");
 
 mongoose.connect(
-  process.env.MONGODB_CONNECT_URI 
-   // "mongodb://localhost:27017/ecom",
-  // "mongodb+srv://parthiv:parthiv@stationary.m6zourd.mongodb.net/?retryWrites=true&w=majority&appName=stationary" 
-    );
+  // add your own monogodb atlas link
+  // change the database name from "Store"  to you database name 
+  process.env.MONGODB_CONNECT_URI ||  "mongodb+srv://pranav:MxfRXkOKXcFhAW1j@cluster0.dwt4kjb.mongodb.net/Store" ).
+    then(()=>{console.log("database is connected")});
 
 
 
@@ -663,5 +663,5 @@ app.get("/buy", async (req, res) => {
 const PORT = process.env.PORT
 
 app.listen(PORT || 8000, (err) => {
-  console.log(`Port is Listening`);
+  console.log(`Serevr is running on port http://localhost:8000/`);
 });
